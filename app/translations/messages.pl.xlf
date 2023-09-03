@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="label.actions">
+        <source>label.actions</source>
+        <target>Akcje</target>
+      </trans-unit>
+      <trans-unit id="label.id">
+        <source>label.id</source>
+        <target>id</target>
+      </trans-unit>
+      <trans-unit id="label.title">
+        <source>label.title</source>
+        <target>Tytuł</target>
+      </trans-unit>
+      <trans-unit id="label.content">
+        <source>label.content</source>
+        <target>Treść</target>
+      </trans-unit>
+      <trans-unit id="label.tags">
+        <source>label.tags</source>
+        <target>Tagi</target>
+      </trans-unit>
+      <trans-unit id="message.empty_list">
+        <source>message.empty_list</source>
+        <target>Pusta lista</target>
+      </trans-unit>
+      <trans-unit id="message.record_not_found">
+        <source>message.record_not_found</source>
+        <target>Nie znaleziono</target>
+      </trans-unit>
+      <trans-unit id="title.record_list">
+        <source>title.record_list</source>
+        <target>Lista rekordów</target>
+      </trans-unit>
+      <trans-unit id="title.record_view">
+        <source>title.record_view</source>
+        <target>Widok rekordu #%id%</target>
+      </trans-unit>
+      <trans-unit id="action.save">
+        <source>action.save</source>
+        <target>Zapisz</target>
+      </trans-unit>
+      <trans-unit id="message.no_permission">
+          <source>message.no_permission</source>
+          <target>Brak dostępu</target>
+      </trans-unit>
+      <trans-unit id="message.created_successfully">
+          <source>message.created_successfully</source>
+          <target>Utworzono</target>
+      </trans-unit>
+      <trans-unit id="message.updated_successfully">
+          <source>message.updated_successfully</source>
+          <target>Zmieniono</target>
+      </trans-unit>
+      <trans-unit id="message.cannot_delete">
+          <source>message.cannot_delete</source>
+          <target>Nie można usunąć</target>
+      </trans-unit>
+      <trans-unit id="message.deleted_successfully">
+          <source>message.deleted_successfully</source>
+          <target>Usunięto</target>
+      </trans-unit>
+      <trans-unit id="label.name">
+          <source>label.name</source>
+          <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit id="label.email">
+          <source>label.email</source>
+          <target>E-mail</target>
+      </trans-unit>
+      <trans-unit id="label.description">
+          <source>label.description</source>
+          <target>Opis</target>
+      </trans-unit>
+      <trans-unit id="label.resolved">
+          <source>label.resolved</source>
+          <target>Zgłoszenie rozwiązane</target>
+      </trans-unit>
+      <trans-unit id="label.category">
+          <source>label.category</source>
+          <target>Kategoria</target>
+      </trans-unit>
+      <trans-unit id="label.no_category">
+          <source>label.no_category</source>
+          <target>Brak kategorii</target>
+      </trans-unit>
+      <trans-unit id="label.password">
+          <source>label.password</source>
+          <target>Hasło</target>
+      </trans-unit>
+      <trans-unit id="label.repeat_password">
+          <source>label.repeat_password</source>
+          <target>Powtórz hasło</target>
+      </trans-unit>
+      <trans-unit id="title.category_create">
+          <source>title.category_create</source>
+          <target>Utwórz kategorię</target>
+      </trans-unit>
+      <trans-unit id="title.category_delete">
+          <source>title.category_delete</source>
+          <target>Usuń kategorię</target>
+      </trans-unit>
+      <trans-unit id="action.delete">
+          <source>action.delete</source>
+          <target>Usuń</target>
+      </trans-unit>
+      <trans-unit id="title.category_edit">
+          <source>title.category_edit</source>
+          <target>Edytuj kategorię</target>
+      </trans-unit>
+      <trans-unit id="action.edit">
+          <source>action.edit</source>
+          <target>Edytuj</target>
+      </trans-unit>
+      <trans-unit id="title.categories">
+          <source>title.categories</source>
+          <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="title.category">
+          <source>title.category</source>
+          <target>Kategoria</target>
+      </trans-unit>
+      <trans-unit id="action.create">
+          <source>action.create</source>
+          <target>Utwórz</target>
+      </trans-unit>
+      <trans-unit id="category.create">
+          <source>category.create</source>
+          <target>Utwórz</target>
+      </trans-unit>
+      <trans-unit id="label.created_at">
+          <source>label.created_at</source>
+          <target>Utworzono</target>
+      </trans-unit>
+      <trans-unit id="label.updated_at">
+          <source>label.updated_at</source>
+          <target>Zmieniono</target>
+      </trans-unit>
+      <trans-unit id="action.show">
+          <source>action.show</source>
+          <target>Pokaż</target>
+      </trans-unit>
+      <trans-unit id="message.no_records">
+          <source>message.no_records</source>
+          <target>Brak rekordów</target>
+      </trans-unit>
+      <trans-unit id="action.back">
+          <source>action.back</source>
+          <target>Wróć</target>
+      </trans-unit>
+      <trans-unit id="label.unresolved">
+          <source>label.unresolved</source>
+          <target>Nie rozwiązane</target>
+      </trans-unit>
+      <trans-unit id="message.form_error">
+          <source>message.form_error</source>
+          <target>Błędne dane</target>
+      </trans-unit>
+      <trans-unit id="action.back_to_list">
+          <source>action.back_to_list</source>
+          <target>Powrót do listy</target>
+      </trans-unit>
+      <trans-unit id="label.reports">
+          <source>label.reports</source>
+          <target>Zgłoszenia</target>
+      </trans-unit>
+      <trans-unit id="action.reports">
+          <source>action.reports</source>
+          <target>Zgłoszenia</target>
+      </trans-unit>
+      <trans-unit id="label.categories">
+          <source>label.categories</source>
+          <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="action.categories">
+          <source>action.categories</source>
+          <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="action.upgrade_password">
+          <source>action.upgrade_password</source>
+          <target>Aktualizuj hasło</target>
+      </trans-unit>
+      <trans-unit id="action.edit_profile">
+          <source>action.edit_profile</source>
+          <target>Edytuj profil</target>
+      </trans-unit>
+      <trans-unit id="action.logout">
+          <source>action.logout</source>
+          <target>Wyloguj</target>
+      </trans-unit>
+      <trans-unit id="action.login">
+          <source>action.login</source>
+          <target>Zaloguj</target>
+      </trans-unit>
+      <trans-unit id="title.profile">
+          <source>title.profile</source>
+          <target>Profil</target>
+      </trans-unit>
+      <trans-unit id="title.upgrade_password">
+          <source>title.upgrade_password</source>
+          <target>Zaktualizuj hasło</target>
+      </trans-unit>
+      <trans-unit id="title.report_create">
+          <source>title.report_create</source>
+          <target>Utwórz zgłoszenie</target>
+      </trans-unit>
+      <trans-unit id="title.report_delete">
+          <source>title.report_delete</source>
+          <target>Usuń zgłoszenie</target>
+      </trans-unit>
+      <trans-unit id="title.report_edit">
+          <source>title.report_edit</source>
+          <target>Edytuj zgłoszenie</target>
+      </trans-unit>
+      <trans-unit id="title.reports">
+          <source>title.reports</source>
+          <target>Zgłoszenia</target>
+      </trans-unit>
+      <trans-unit id="report.create">
+          <source>report.create</source>
+          <target>Utwórz zgłoszenie</target>
+      </trans-unit>
+      <trans-unit id="label.already_logged">
+          <source>label.already_logged</source>
+          <target>Jesteś już zalogowany jako </target>
+      </trans-unit>
+      <trans-unit id="title.please_login">
+          <source>title.please_login</source>
+          <target>Zaloguj się </target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

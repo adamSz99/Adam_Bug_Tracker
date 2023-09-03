@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.categories'|trans }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title.category'|trans }}</h1>
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.isAdminRole() %}
+        <div class="mb-3">
+            <a href="{{ url('category_create') }}" title="{{ 'action.create'|trans }}">
+                {{ 'category.create'|trans }}
+            </a>
+        </div>
+    {% endif %}
+
+    {% if pagination is defined and pagination.items|length %}
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ 'label.name'|trans }}</th>
+                <th>{{ 'label.created_at'|trans }}</th>
+                <th>{{ 'label.updated_at'|trans }}</th>
+                <th>{{ 'label.actions'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for category in pagination.items %}
+                <tr>
+                    <td>
+                        <a href="{{ url('category_show', {id: category.id}) }}" title="{{ 'action.show'|trans }}">
+                            {{ category.name }}
+                        </a>
+                    </td>
+                    <td>{{ category.createdAt|date('d.m.Y') }}</td>
+                    <td>{{ category.updatedAt|date('d.m.Y') }}</td>
+                    <td>
+                        <a href="{{ url('category_show', {id: category.id}) }}" title="{{ 'action.show'|trans }}">
+                            {{ 'action.show'|trans }}
+                        </a>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.isAdminRole() %}
+                            <a href="{{ url('category_edit', {id: category.id}) }}" title="{{ 'action.edit'|trans }}">
+                                {{ 'action.edit'|trans }}
+                            </a>
+                            <a href="{{ url('category_delete', {id: category.id}) }}"
+                               title="{{ 'action.delete'|trans }}">
+                                {{ 'action.delete'|trans }}
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+    {% else %}
+        <p>
+            {{ 'message.no_records'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

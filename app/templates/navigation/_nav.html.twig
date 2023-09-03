@@ -1,0 +1,55 @@
+<nav class="m-3">
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" style="font-size: 1.2rem;"
+                data-bs-toggle="dropdown" aria-expanded="false">
+            ☰
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="{{ url('report_index') }}" title="{{ 'label.reports'|trans }}">
+                    {{ 'action.reports'|trans }}
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{{ url('category_index') }}" title="{{ 'label.categories'|trans }}">
+                    {{ 'action.categories'|trans }}
+                </a>
+            </li>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <div class="dropdown-item" style="font-weight: bold;">
+                        {{ app.user.email }}
+                    </div>
+                </li>
+                <li>
+                    <a class="dropdown-item text-primary" href="{{ url('user_upgrade_password', {id: app.user.id}) }}"
+                       title="{{ 'action.upgrade_password'|trans }}">
+                        {{ 'action.upgrade_password'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-primary" href="{{ url('profile', {id: app.user.id}) }}"
+                       title="{{ 'action.edit_profile'|trans }}">
+                        {{ 'action.edit_profile'|trans }}
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <a class="dropdown-item text-danger" href="{{ url('app_logout') }}"
+                       title="{{ 'action.logout'|trans }}">
+                        {{ 'action.logout'|trans }}
+                    </a>
+                </li>
+            {% else %}
+                <li>
+                    <a class="dropdown-item text-primary" href="{{ url('app_login') }}">{{ 'action.login'|trans }}</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

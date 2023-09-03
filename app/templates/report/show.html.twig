@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ report.title }}
+{% endblock %}
+
+{% block body %}
+    <a href="{{ url('report_index') }}" title="{{ 'action.back'|trans }}">
+        {{ 'action.back'|trans }}
+    </a>
+
+    <h1>{{ report.title }}</h1>
+
+    {% if report.isResolved() %}
+        <h3 style="color: #307509; font-weight: bold;">{{ 'label.resolved'|trans }}</h3>
+    {% else %}
+        <h3 style="color: #962323; font-weight: bold;">{{ 'label.unresolved'|trans }}</h3>
+    {% endif %}
+
+    <div>{{ 'label.created_at'|trans }}: {{ report.createdAt|date('d.m.Y') }}</div>
+    <div>{{ 'label.updated_at'|trans }}: {{ report.updatedAt|date('d.m.Y') }}</div>
+
+    <div class="mt-3">
+        <dt>{{ 'label.description'|trans }}</dt>
+        <dd>{{ report.description }}</dd>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ category.name }}
+{% endblock %}
+
+{% block body %}
+    <a href="{{ url('category_index') }}" title="{{ 'action.back'|trans }}">
+        {{ 'action.back'|trans }}
+    </a>
+
+    <h1>{{ category.name }}</h1>
+
+    <div>{{ 'label.created_at'|trans }}: {{ category.createdAt|date('d.m.Y') }}</div>
+    <div>{{ 'label.updated_at'|trans }}: {{ category.updatedAt|date('d.m.Y') }}</div>
+
+    <div class="mt-3">
+        <dt>{{ 'label.name'|trans }}</dt>
+        <dd>{{ category.name }}</dd>
+    </div>
+
+{% endblock %}
