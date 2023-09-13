@@ -976,6 +976,16 @@ Search.appendIndex(
             "summary": "User\u0020repository",
             "url": "classes/App-Service-UserService.html#property_userRepository"
         },                {
+            "fqsen": "\\App\\Controller\\HomepageController",
+            "name": "HomepageController",
+            "summary": "Class\u0020OperationController.",
+            "url": "classes/App-Controller-HomepageController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\HomepageController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "Index\u0020action.",
+            "url": "classes/App-Controller-HomepageController.html#method_index"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",

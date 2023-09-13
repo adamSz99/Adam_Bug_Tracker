@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Report
  */
@@ -93,6 +94,8 @@ class Report
 
     /**
      * Get created at.
+     *
+     * @return DateTimeImmutable|null Date and time the report was created
      */
     public function getCreatedAt(): ?DateTimeImmutable
     {
@@ -101,6 +104,9 @@ class Report
 
     /**
      * Set created at.
+     * @param DateTimeImmutable|null $createdAt Date and time the report was created
+     *
+     * @return void
      */
     public function setCreatedAt(?DateTimeImmutable $createdAt): void
     {
@@ -110,7 +116,8 @@ class Report
     /**
      * Get updated at.
      *
-     * @return null|DateTimeImmutable Updated at
+     * @return DateTimeImmutable|null Updated at
+     *
      */
     public function getUpdatedAt(): ?DateTimeImmutable
     {
@@ -120,7 +127,9 @@ class Report
     /**
      * Set updated at.
      *
-     * @param null|DateTimeImmutable Updated at
+     * @param DateTimeImmutable|null $updatedAt Date and time the report was updated
+     *
+     * @return void
      */
     public function setUpdatedAt(?DateTimeImmutable $updatedAt): void
     {
