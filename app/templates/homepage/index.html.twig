@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.homepage'|trans }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-5">
+
+        <header>
+            <h1 class="text-center mb-5">Witaj na portalu BugTrack</h1>
+        </header>
+
+        <section>
+            <p>Zapraszam do korzystania z systemu zgłoszeniowego - BugTracker</p>
+        </section>
+
+        <section>
+            <h2 class="mt-4 mb-3">Dla użytkowników niezalogowanych:</h2>
+            <ul>
+                <li><strong>Przeglądaj najnowsze zgłoszenia</strong>: Zgłoszenia są sortowane od najnowszych do najstarszych.</li>
+		<li><strong>Przeglądaj kategorie zgłoszeń</strong>: Kategorie użyte w zgłoszeniach.</li>
+                
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="mt-4 mb-3">Dla użytkowników zalogowanych:</h2>
+            <ul>
+                <li><strong>Pełna kontrola treści zgłoszenia</strong>: Jako administrator, masz pełne prawa do tworzenia, edycji i usuwania zgłoszeń, jak również oznaczenie ich zrealizowania.</li>
+                <li><strong>Pełna kontrola kategorii zgłoszeń</strong>: Jako administrator, masz pełne prawa do tworzenia, edycji i usuwania kategorii.</li>
+      		<li><strong>Zmiana danych</strong>: Masz możliwość zmiany danych logowania - (login i hasło).</li>
+
+ </ul>
+        </section>
+
+        <footer class="mt-5">
+            <p class="text-center">W razie pytań lub wątpliwości zapraszam do kontaktu! @Sz</p>
+        </footer>
+
+    </div>
+
+
+{% endblock %}
