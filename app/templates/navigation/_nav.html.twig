@@ -5,7 +5,13 @@
             ☰
         </button>
         <ul class="dropdown-menu">
-            <li>
+   	<li>
+                <a class="dropdown-item" href="{{ url('homepage') }}" title="{{ 'title.homepage'|trans }}">
+                    {{ 'title.homepage'|trans }}
+                </a>
+            </li>
+            
+	<li>
                 <a class="dropdown-item" href="{{ url('report_index') }}" title="{{ 'label.reports'|trans }}">
                     {{ 'action.reports'|trans }}
                 </a>
