@@ -986,6 +986,46 @@ Search.appendIndex(
             "summary": "Index\u0020action.",
             "url": "classes/App-Controller-HomepageController.html#method_index"
         },                {
+            "fqsen": "\\App\\Security\\Voter\\ReportVoter",
+            "name": "ReportVoter",
+            "summary": "Class\u0020ReportVoter.",
+            "url": "classes/App-Security-Voter-ReportVoter.html"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\ReportVoter\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "ReportVoter\u0020constructor.",
+            "url": "classes/App-Security-Voter-ReportVoter.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\ReportVoter\u003A\u003Asupports\u0028\u0029",
+            "name": "supports",
+            "summary": "Determines\u0020if\u0020the\u0020attribute\u0020and\u0020subject\u0020are\u0020supported\u0020by\u0020this\u0020voter.",
+            "url": "classes/App-Security-Voter-ReportVoter.html#method_supports"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\ReportVoter\u003A\u003AvoteOnAttribute\u0028\u0029",
+            "name": "voteOnAttribute",
+            "summary": "Perform\u0020a\u0020single\u0020access\u0020check\u0020operation\u0020on\u0020a\u0020given\u0020attribute,\u0020subject\u0020and\u0020token.",
+            "url": "classes/App-Security-Voter-ReportVoter.html#method_voteOnAttribute"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\ReportVoter\u003A\u003AVIEW",
+            "name": "VIEW",
+            "summary": "View\u0020permission.",
+            "url": "classes/App-Security-Voter-ReportVoter.html#constant_VIEW"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\ReportVoter\u003A\u003AEDIT",
+            "name": "EDIT",
+            "summary": "Edit\u0020permission.",
+            "url": "classes/App-Security-Voter-ReportVoter.html#constant_EDIT"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\ReportVoter\u003A\u003ADELETE",
+            "name": "DELETE",
+            "summary": "Delete\u0020permission.",
+            "url": "classes/App-Security-Voter-ReportVoter.html#constant_DELETE"
+        },                {
+            "fqsen": "\\App\\Security\\Voter\\ReportVoter\u003A\u003A\u0024security",
+            "name": "security",
+            "summary": "Security\u0020helper.",
+            "url": "classes/App-Security-Voter-ReportVoter.html#property_security"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -1035,6 +1075,11 @@ Search.appendIndex(
             "name": "Security",
             "summary": "",
             "url": "namespaces/app-security.html"
+        },                {
+            "fqsen": "\\App\\Security\\Voter",
+            "name": "Voter",
+            "summary": "",
+            "url": "namespaces/app-security-voter.html"
         },                {
             "fqsen": "\\App\\Service",
             "name": "Service",

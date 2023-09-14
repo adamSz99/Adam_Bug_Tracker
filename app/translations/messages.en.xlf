@@ -6,6 +6,10 @@
         <source>title.homepage</source>
         <target>Homepage</target>
       </trans-unit>
+      <trans-unit id="label.bug">
+                    <source>label.bug</source>
+                    <target>Bug</target>
+                  </trans-unit>
       	<trans-unit id="label.actions">
         <source>label.actions</source>
         <target>Actions</target>

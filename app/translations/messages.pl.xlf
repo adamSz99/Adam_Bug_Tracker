@@ -6,6 +6,58 @@
         <source>title.homepage</source>
         <target>Strona domowa</target>
       </trans-unit>
+      <trans-unit id="E-mail" resname="E-mail">
+                      <source>E-mail</source>
+                      <target>E-mail</target>
+                  </trans-unit>
+<trans-unit id="Hasło" resname="Hasło">
+                      <source>Hasło</source>
+                      <target>Hasło</target>
+                  </trans-unit>
+                  <trans-unit id="Powtórz hasło" resname="Powtórz hasło">
+                                        <source>Powtórz hasło</source>
+                                        <target>Powtórz hasło</target>
+                                    </trans-unit>
+      <trans-unit id="Tytuł" resname="Tytuł">
+                      <source>Tytuł</source>
+                      <target>Tytuł</target>
+                  </trans-unit>
+<trans-unit id="Opis" resname="Opis">
+                <source>Opis</source>
+                <target>Opis</target>
+            </trans-unit>
+            <trans-unit id="Type" resname="Type">
+                <source>Type</source>
+                <target>Typ</target>
+            </trans-unit>
+            <trans-unit id="label.unknown" resname="label.unknown">
+                <source>label.unknown</source>
+                <target>Nieznany</target>
+            </trans-unit>
+            <trans-unit id="label.improvement" resname="label.improvement">
+                <source>label.improvement</source>
+                <target>Ulepszenie</target>
+            </trans-unit>
+            <trans-unit id="label.feature_request" resname="label.feature_request">
+                <source>label.feature_request</source>
+                <target>Prośba o funkcję</target>
+            </trans-unit>
+            <trans-unit id="Zgłoszenie rozwiązane" resname="Zgłoszenie rozwiązane">
+                <source>Zgłoszenie rozwiązane</source>
+                <target>Zgłoszenie rozwiązane</target>
+            </trans-unit>
+            <trans-unit id="Kategoria" resname="Kategoria">
+                <source>Kategoria</source>
+                <target>Kategoria</target>
+            </trans-unit>
+            <trans-unit id="Brak kategorii" resname="Brak kategorii">
+                <source>Brak kategorii</source>
+                <target>Brak kategorii</target>
+            </trans-unit>
+      <trans-unit id="label.bug">
+              <source>label.bug</source>
+              <target>Bug</target>
+            </trans-unit>
 	<trans-unit id="label.actions">
         <source>label.actions</source>
         <target>Akcje</target>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Report controller.
  */
@@ -14,6 +15,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use App\Form\Type\ReportType;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * Class ReportController
@@ -94,8 +96,9 @@ class ReportController extends AbstractController
     #[Route(
         '/create',
         name: 'report_create',
-        methods: 'GET|POST',
+        methods: 'GET|POST'
     )]
+    #[IsGranted('ROLE_ADMIN')]
     public function create(Request $request): Response
     {
         $report = new Report();
@@ -103,7 +106,7 @@ class ReportController extends AbstractController
         $form->handleRequest($request);
 
         $user = $this->getUser();
-        if (!$user->isAdminRole()) {
+        if (!$user || !$user->isAdminRole()) {
             $this->addFlash('danger', $this->translator->trans('message.no_permission'));
 
             return $this->redirectToRoute('report_index');
@@ -134,10 +137,11 @@ class ReportController extends AbstractController
         requirements: ['id' => '[1-9]\d*'],
         methods: 'GET|PUT'
     )]
+    #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, Report $report): Response
     {
         $user = $this->getUser();
-        if (!$user->isAdminRole()) {
+        if (!$user || !$user->isAdminRole()) {
             $this->addFlash('danger', $this->translator->trans('message.no_permission'));
 
             return $this->redirectToRoute('report_index');
@@ -172,10 +176,11 @@ class ReportController extends AbstractController
      * @return Response Response
      */
     #[Route('/{id}/delete', name: 'report_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
+    #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Report $report): Response
     {
         $user = $this->getUser();
-        if (!$user->isAdminRole()) {
+        if (!$user || !$user->isAdminRole()) {
             $this->addFlash('danger', $this->translator->trans('message.no_permission'));
 
             return $this->redirectToRoute('report_index');
