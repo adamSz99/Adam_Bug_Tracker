@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Report service
+ * Report service.
  */
 
 namespace App\Service;
@@ -9,30 +10,29 @@ use App\Entity\Report;
 use App\Repository\ReportRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Class ReportService
+ * Class ReportService.
  */
 class ReportService
 {
     /**
-     * Report repository
+     * Report repository.
      */
     private ReportRepository $reportRepository;
 
     /**
-     * Paginator interface
+     * Paginator interface.
      */
     private PaginatorInterface $paginator;
 
     /**
-     * Category service
+     * Category service.
      */
     private CategoryService $categoryService;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param ReportRepository   $reportRepository Report repository
      * @param PaginatorInterface $paginator        Paginator
@@ -46,7 +46,7 @@ class ReportService
     }
 
     /**
-     * Save
+     * Save.
      *
      * @param Report $report Report
      */
@@ -56,7 +56,7 @@ class ReportService
     }
 
     /**
-     * Delete
+     * Delete.
      *
      * @param Report $report Report
      */
@@ -71,7 +71,7 @@ class ReportService
      * @param int   $page    Page number
      * @param array $filters Filters
      *
-     * @return PaginationInterface
+     * @return PaginationInterface Array
      */
     public function getPaginatedList(int $page, array $filters = []): PaginationInterface
     {
@@ -85,7 +85,7 @@ class ReportService
     }
 
     /**
-     * Prepare filters
+     * Prepare filters.
      *
      * @param array $filters Filters
      *

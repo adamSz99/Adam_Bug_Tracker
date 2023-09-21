@@ -1,6 +1,7 @@
 <?php
+
 /**
- * User service
+ * User service.
  */
 
 namespace App\Service;
@@ -9,19 +10,19 @@ use App\Entity\User;
 use App\Repository\UserRepository;
 
 /**
- * Class UserService
+ * Class UserService.
  */
 class UserService
 {
     /**
-     * User repository
+     * User repository.
      *
      * @var UserRepository User repository
      */
     private UserRepository $userRepository;
 
     /**
-     * Construct new service
+     * Construct new service.
      *
      * @param UserRepository $userRepository User repository
      */
@@ -31,7 +32,7 @@ class UserService
     }
 
     /**
-     * Save user
+     * Save user.
      *
      * @param User $user User
      *

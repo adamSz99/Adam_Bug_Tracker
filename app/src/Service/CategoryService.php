@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Category service.
  */
@@ -10,10 +11,9 @@ use App\Repository\CategoryRepository;
 use App\Repository\ReportRepository;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Class CategoryService
+ * Class CategoryService.
  */
 class CategoryService
 {
@@ -33,7 +33,7 @@ class CategoryService
     private PaginatorInterface $paginator;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param CategoryRepository $categoryRepository Category repository
      * @param ReportRepository   $reportRepository   Report repository
@@ -61,7 +61,7 @@ class CategoryService
      *
      * @param Category $category Category entity
      *
-     * @return bool
+     * @return bool Result
      */
     public function delete(Category $category): bool
     {
@@ -95,7 +95,7 @@ class CategoryService
      *
      * @param int $page Page
      *
-     * @return PaginationInterface
+     * @return PaginationInterface Pagination
      */
     public function getPaginatedList(int $page): PaginationInterface
     {
@@ -107,7 +107,7 @@ class CategoryService
     }
 
     /**
-     * Find one
+     * Find one.
      *
      * @param int $id Id
      *

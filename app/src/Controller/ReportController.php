@@ -17,18 +17,18 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Class ReportController
+ * Class ReportController.
  */
 #[Route('/reports')]
 class ReportController extends AbstractController
 {
     /**
-     * Report service
+     * Report service.
      */
     private ReportService $reportService;
 
     /**
-     * Translator interface
+     * Translator interface.
      */
     private TranslatorInterface $translator;
 

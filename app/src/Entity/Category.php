@@ -1,26 +1,24 @@
 <?php
+
 /**
- * Category
+ * Category.
  */
 
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Class Category
+ * Class Category.
  */
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 class Category
 {
     /**
-     * Primary key
-     *
-     * @var int|null
+     * Primary key.
      */
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -28,25 +26,21 @@ class Category
     private ?int $id = null;
 
     /**
-     * Category name
-     *
-     * @var string|null
+     * Category name.
      */
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 2, max: 255)]
     private ?string $name = null;
 
     /**
-     * Category author
-     *
-     * @var User|null
+     * Category author.
      */
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $author = null;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int|null Id
      */
@@ -56,7 +50,7 @@ class Category
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string|null Name
      */
@@ -66,7 +60,7 @@ class Category
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name Name
      *
@@ -80,7 +74,7 @@ class Category
     }
 
     /**
-     * Get category author
+     * Get category author.
      *
      * @return User|null User
      */
@@ -106,23 +100,23 @@ class Category
      */
     #[ORM\Column(type: 'datetime_immutable')]
     #[Gedmo\Timestampable(on: 'create')]
-    #[Assert\Type(DateTimeImmutable::class)]
-    private ?DateTimeImmutable $createdAt;
+    #[Assert\Type(\DateTimeImmutable::class)]
+    private ?\DateTimeImmutable $createdAt;
 
     /**
      * Updated at.
      */
     #[ORM\Column(type: 'datetime_immutable')]
     #[Gedmo\Timestampable(on: 'update')]
-    #[Assert\Type(DateTimeImmutable::class)]
-    private ?DateTimeImmutable $updatedAt;
+    #[Assert\Type(\DateTimeImmutable::class)]
+    private ?\DateTimeImmutable $updatedAt;
 
     /**
      * Get created at.
      *
-     * @return null|DateTimeImmutable Created at
+     * @return \DateTimeImmutable|null Created at
      */
-    public function getCreatedAt(): ?DateTimeImmutable
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
     }
@@ -130,9 +124,9 @@ class Category
     /**
      * Set created at.
      *
-     * @param null|DateTimeImmutable $createdAt Created at
+     * @param \DateTimeImmutable|null $createdAt Created at
      */
-    public function setCreatedAt(?DateTimeImmutable $createdAt): void
+    public function setCreatedAt(?\DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
@@ -140,9 +134,9 @@ class Category
     /**
      * Get updated at.
      *
-     * @return null|DateTimeImmutable Date time immutable
+     * @return \DateTimeImmutable|null Date time immutable
      */
-    public function getUpdatedAt(): ?DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
     }
@@ -150,9 +144,9 @@ class Category
     /**
      * Set updated at.
      *
-     * @param null|DateTimeImmutable $updatedAt Updated at
+     * @param \DateTimeImmutable|null $updatedAt Updated at
      */
-    public function setUpdatedAt(?DateTimeImmutable $updatedAt): void
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Category type
+ * Category type.
  */
 
 namespace App\Form\Type;
@@ -13,11 +14,13 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * Class CategoryType
+ * Class CategoryType.
  */
 class CategoryType extends AbstractType
 {
     /**
+     * Translator.
+     *
      * @var TranslatorInterface Translator
      */
     private TranslatorInterface $translator;

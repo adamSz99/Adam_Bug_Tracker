@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Report repository
+ * Report repository.
  */
 
 namespace App\Repository;
@@ -29,7 +30,7 @@ class ReportRepository extends ServiceEntityRepository
     public const PAGINATOR_ITEMS_PER_PAGE = 10;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param ManagerRegistry $registry Manager registry
      */
@@ -39,7 +40,7 @@ class ReportRepository extends ServiceEntityRepository
     }
 
     /**
-     * Save
+     * Save.
      *
      * @param Report $report Report
      */
@@ -50,7 +51,7 @@ class ReportRepository extends ServiceEntityRepository
     }
 
     /**
-     * Delete
+     * Delete.
      *
      * @param Report $report Report
      */
@@ -65,13 +66,13 @@ class ReportRepository extends ServiceEntityRepository
      *
      * @param array $filters Filters
      *
-     * @return QueryBuilder
+     * @return QueryBuilder QueryBuilder
      */
     public function queryAll(array $filters): QueryBuilder
     {
         $result = $this
             ->getOrCreateQueryBuilder()
-            ->select('partial report.{id, createdAt, updatedAt, title, description, type, resolved}', 'partial category.{id, name}')
+            ->select('partial report.{id, createdAt, updatedAt, title, description, type, resolved}, partial category.{id, name}')
             ->join('report.category', 'category')
             ->orderBy('report.createdAt', 'DESC');
 
@@ -79,7 +80,7 @@ class ReportRepository extends ServiceEntityRepository
     }
 
     /**
-     * Count by category
+     * Count by category.
      *
      * @param Category $category Category
      *
@@ -102,13 +103,11 @@ class ReportRepository extends ServiceEntityRepository
     /**
      * Get or create new query builder.
      *
-     * @param QueryBuilder|null $queryBuilder Query builder
-     *
      * @return QueryBuilder Query builder
      */
-    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
+    private function getOrCreateQueryBuilder(): QueryBuilder
     {
-        return $queryBuilder ?? $this->createQueryBuilder('report');
+        return $this->createQueryBuilder('report');
     }
 
     /**
@@ -117,7 +116,7 @@ class ReportRepository extends ServiceEntityRepository
      * @param QueryBuilder $queryBuilder Query builder
      * @param array        $filters      Filters
      *
-     * @return QueryBuilder
+     * @return QueryBuilder Array
      */
     private function filter(QueryBuilder $queryBuilder, array $filters = []): QueryBuilder
     {

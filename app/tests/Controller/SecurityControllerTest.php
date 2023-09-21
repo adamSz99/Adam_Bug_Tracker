@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Security controller tests.
  */
@@ -49,6 +50,47 @@ class SecurityControllerTest extends WebTestCase
     }
 
     /**
+     * Test update profile route.
+     */
+    public function testUpdateProfileRoute(): void
+    {
+        $email = 'test@example.com';
+        $user = $this->createUser(['ROLE_USER'], $email);
+        $this->httpClient->loginUser($user);
+
+        $crawler = $this->httpClient->request('GET', '/'.$user->getId().'/profile');
+        $form = $crawler->selectButton('Zapisz')->form();
+
+        $newEmail = 'test2@example.com';
+        $form['profile[email]'] = $newEmail;
+
+        $this->httpClient->submit($form);
+        $result = $this->httpClient->getResponse()->getStatusCode();
+        $this->assertEquals(302, $result);
+    }
+
+    /**
+     * Test update password type.
+     */
+    public function testUpgradePasswordTypeRoute(): void
+    {
+        $email = 'test@example.com';
+        $user = $this->createUser(['ROLE_USER'], $email);
+        $this->httpClient->loginUser($user);
+
+        $crawler = $this->httpClient->request('GET', '/'.$user->getId().'/upgrade-password');
+        $form = $crawler->selectButton('Zapisz')->form();
+
+        $password = 'PASSWORD1234';
+        $form['upgrade_password[password][first]'] = $password;
+        $form['upgrade_password[password][second]'] = $password;
+
+        $this->httpClient->submit($form);
+        $result = $this->httpClient->getResponse()->getStatusCode();
+        $this->assertEquals(200, $result);
+    }
+
+    /**
      * Test logout route.
      */
     public function testLogoutRoute(): void
@@ -63,11 +105,10 @@ class SecurityControllerTest extends WebTestCase
         $this->assertEquals(302, $result);
     }
 
-
     /**
      * Create user.
      *
-     * @param array  $roles User roles
+     * @param array $roles User roles
      * @param string $email Email
      *
      * @return User User entity'

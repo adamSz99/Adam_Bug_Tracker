@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Categories controller tests.
  */
@@ -147,3 +148,4 @@ class CategoryControllerTest extends WebTestCase
         return $category;
     }
 }
+

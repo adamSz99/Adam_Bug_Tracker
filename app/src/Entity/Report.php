@@ -1,28 +1,25 @@
 <?php
 
 /**
- * Report
+ * Report.
  */
 
 namespace App\Entity;
 
 use App\Repository\ReportRepository;
-use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Class Report
+ * Class Report.
  */
 #[ORM\Entity(repositoryClass: ReportRepository::class)]
 class Report
 {
     /**
-     * Primary key
-     *
-     * @var int|null
+     * Primary key.
      */
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -30,43 +27,33 @@ class Report
     private ?int $id = null;
 
     /**
-     * Report title
-     *
-     * @var string|null
+     * Report title.
      */
     #[ORM\Column(length: 255)]
     #[Assert\Length(min: 5, max: 255)]
     private ?string $title = null;
 
     /**
-     * Description
-     *
-     * @var string|null
+     * Description.
      */
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     #[Assert\Length(max: 2000)]
     private ?string $description = null;
 
     /**
-     * If report is resolved or not
-     *
-     * @var bool|null
+     * If report is resolved or not.
      */
     #[ORM\Column]
     private ?bool $resolved = null;
 
     /**
-     * Report type
-     *
-     * @var string|null
+     * Report type.
      */
     #[ORM\Column(length: 255)]
     private ?string $type = null;
 
     /**
-     * Report category
-     *
-     * @var Category|null
+     * Report category.
      */
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
@@ -77,16 +64,16 @@ class Report
      */
     #[ORM\Column(type: 'datetime_immutable')]
     #[Gedmo\Timestampable(on: 'create')]
-    #[Assert\Type(DateTimeImmutable::class)]
-    private ?DateTimeImmutable $createdAt;
+    #[Assert\Type(\DateTimeImmutable::class)]
+    private ?\DateTimeImmutable $createdAt;
 
     /**
      * Updated at.
      */
     #[ORM\Column(type: 'datetime_immutable')]
     #[Gedmo\Timestampable(on: 'update')]
-    #[Assert\Type(DateTimeImmutable::class)]
-    private ?DateTimeImmutable $updatedAt;
+    #[Assert\Type(\DateTimeImmutable::class)]
+    private ?\DateTimeImmutable $updatedAt;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
@@ -95,20 +82,19 @@ class Report
     /**
      * Get created at.
      *
-     * @return DateTimeImmutable|null Date and time the report was created
+     * @return \DateTimeImmutable|null Date and time the report was created
      */
-    public function getCreatedAt(): ?DateTimeImmutable
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
     }
 
     /**
      * Set created at.
-     * @param DateTimeImmutable|null $createdAt Date and time the report was created
      *
-     * @return void
+     * @param \DateTimeImmutable|null $createdAt Date and time the report was created
      */
-    public function setCreatedAt(?DateTimeImmutable $createdAt): void
+    public function setCreatedAt(?\DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
@@ -116,10 +102,9 @@ class Report
     /**
      * Get updated at.
      *
-     * @return DateTimeImmutable|null Updated at
-     *
+     * @return \DateTimeImmutable|null Updated at
      */
-    public function getUpdatedAt(): ?DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
     }
@@ -127,17 +112,15 @@ class Report
     /**
      * Set updated at.
      *
-     * @param DateTimeImmutable|null $updatedAt Date and time the report was updated
-     *
-     * @return void
+     * @param \DateTimeImmutable|null $updatedAt Date and time the report was updated
      */
-    public function setUpdatedAt(?DateTimeImmutable $updatedAt): void
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int|null Id
      */
@@ -147,7 +130,7 @@ class Report
     }
 
     /**
-     * Get title
+     * Get title.
      *
      * @return string|null Title
      */
@@ -157,9 +140,9 @@ class Report
     }
 
     /**
-     * Set title
+     * Set title.
      *
-     * @param string $title Titlte
+     * @param string $title Title
      *
      * @return $this Report
      */
@@ -171,7 +154,7 @@ class Report
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string|null Description
      */
@@ -181,7 +164,7 @@ class Report
     }
 
     /**
-     * Description
+     * Description.
      *
      * @param string|null $description Description
      *
@@ -195,7 +178,7 @@ class Report
     }
 
     /**
-     * Is resolved
+     * Is resolved.
      *
      * @return bool|null Is resolved
      */
@@ -205,7 +188,7 @@ class Report
     }
 
     /**
-     * Set resolved
+     * Set resolved.
      *
      * @param bool $resolved Resolved
      *
@@ -219,7 +202,7 @@ class Report
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return string|null Type
      */
@@ -229,7 +212,7 @@ class Report
     }
 
     /**
-     * Set type
+     * Set type.
      *
      * @param string $type Type
      *
@@ -243,7 +226,7 @@ class Report
     }
 
     /**
-     * Get category
+     * Get category.
      *
      * @return Category|null Category or null
      */
@@ -253,7 +236,7 @@ class Report
     }
 
     /**
-     * Set category
+     * Set category.
      *
      * @param Category|null $category Category or null
      *
@@ -267,7 +250,7 @@ class Report
     }
 
     /**
-     * Get author
+     * Get author.
      *
      * @return User|null User
      */
@@ -277,7 +260,7 @@ class Report
     }
 
     /**
-     * Set author
+     * Set author.
      *
      * @param User|null $author User or null
      *

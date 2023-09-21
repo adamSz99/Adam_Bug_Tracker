@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Category controller.
  */
@@ -6,6 +7,8 @@
 namespace App\Controller;
 
 use App\Service\CategoryService;
+use http\Client\Curl\User;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
@@ -27,12 +30,14 @@ class CategoryController extends AbstractController
     private CategoryService $categoryService;
 
     /**
-     * Translator
+     * Translator.
+     *
+     * @param TranslatorInterface $translator
      */
     private TranslatorInterface $translator;
 
     /**
-     * Construct new category controller
+     * Construct new category controller.
      *
      * @param CategoryService     $categoryService Category service
      * @param TranslatorInterface $translator      Translator
@@ -87,6 +92,7 @@ class CategoryController extends AbstractController
      * Create action.
      *
      * @param Request $request HTTP request
+     * @param         $user    User
      *
      * @return Response HTTP response
      */
@@ -95,15 +101,9 @@ class CategoryController extends AbstractController
         name: 'category_create',
         methods: 'GET|POST',
     )]
-    public function create(Request $request): Response
+    #[IsGranted('ROLE_ADMIN')]
+    public function create(Request $request, $user): Response
     {
-        $user = $this->getUser();
-        if (!$user->isAdminRole()) {
-            $this->addFlash('danger', $this->translator->trans('message.no_permission'));
-
-            return $this->redirectToRoute('category_index');
-        }
-
         $category = new Category();
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
@@ -137,14 +137,9 @@ class CategoryController extends AbstractController
         requirements: ['id' => '[1-9]\d*'],
         methods: 'GET|PUT'
     )]
+    #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, Category $category): Response
     {
-        $user = $this->getUser();
-        if (!$user->isAdminRole()) {
-            $this->addFlash('danger', $this->translator->trans('message.no_permission'));
-
-            return $this->redirectToRoute('category_index');
-        }
         $form = $this->createForm(
             CategoryType::class,
             $category,
@@ -184,18 +179,14 @@ class CategoryController extends AbstractController
      * @return Response HTTP response
      */
     #[Route('/{id}/delete', name: 'category_delete', requirements: ['id' => '[1-9]\d*'], methods: 'GET|DELETE')]
+    #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Category $category): Response
     {
-        $user = $this->getUser();
-        if (!$user->isAdminRole()) {
-            $this->addFlash('danger', $this->translator->trans('message.no_permission'));
-
-            return $this->redirectToRoute('category_index');
-        }
         $form = $this->createForm(FormType::class, $category, [
             'method' => 'DELETE',
             'action' => $this->generateUrl('category_delete', ['id' => $category->getId()]),
         ]);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

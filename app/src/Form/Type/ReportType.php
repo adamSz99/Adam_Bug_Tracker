@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Report form type.
  */
@@ -29,7 +30,7 @@ class ReportType extends AbstractType
     /**
      * Constructor.
      *
-     * @param TranslatorInterface $translator
+     * @param TranslatorInterface $translator translator
      */
     public function __construct(TranslatorInterface $translator)
     {

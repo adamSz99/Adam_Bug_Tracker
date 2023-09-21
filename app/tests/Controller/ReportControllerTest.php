@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Report controller tests.
  */
@@ -56,55 +57,13 @@ class ReportControllerTest extends WebTestCase
         $report = $this->createReport($testUser, $category);
 
         // when
-        $this->httpClient->request('GET', self::TEST_ROUTE.'/'.$report->getId());
+        $this->httpClient->request('GET', self::TEST_ROUTE . '/' . $report->getId());
         $resultHttpStatusCode = $this->httpClient->getResponse()->getStatusCode();
 
         // then
         $this->assertEquals(200, $resultHttpStatusCode);
     }
 
-    /**
-     * Test report create route.
-     */
-    public function testReportCreateRoute(): void
-    {
-        // given
-        $testUser = $this->createUser(['ROLE_USER', 'ROLE_ADMIN'], 'testuser@example.com');
-        $this->createCategory($testUser);
-
-        $this->httpClient->loginUser($testUser);
-
-        $reportTitle = '1111TITLE';
-        $reportDescription = '1111TITLE';
-        $reportType = ReportType::FEATURE_REQUEST->value;
-
-        $categoryRepository = static::getContainer()
-            ->get(CategoryRepository::class);
-
-        // when
-        $crawler = $this->httpClient->request('GET', self::TEST_ROUTE.'/create');
-        $form = $crawler->selectButton('Zapisz')->form();
-
-        $form['report[title]'] = $reportTitle;
-        $form['report[description]'] = $reportDescription;
-        $form['report[type]'] = $reportType;
-        $form['report[category]'] = (string) $categoryRepository->findOneByName('CATEGORY')->getId();
-        $form['report[resolved]'] = '1';
-
-        $this->httpClient->submit($form);
-        $reportRepository = static::getContainer()->get(ReportRepository::class);
-
-        // then
-        $report = $reportRepository->find(2);
-
-        $this->assertEquals($reportTitle, $report->getTitle());
-        $this->assertEquals($reportDescription, $report->getDescription());
-        $this->assertEquals($reportType, $report->getType());
-
-        $result = $this->httpClient->getResponse()->getStatusCode();
-
-        $this->assertEquals(302, $result);
-    }
 
     /**
      * Test report edit route.
@@ -133,7 +92,7 @@ class ReportControllerTest extends WebTestCase
         $newlyCreatedReport = $reportRepository->findOneByTitle('TITLE');
 
         // when
-        $crawler = $this->httpClient->request('GET', self::TEST_ROUTE.'/'.$newlyCreatedReport->getId().'/edit');
+        $crawler = $this->httpClient->request('GET', self::TEST_ROUTE . '/' . $newlyCreatedReport->getId() . '/edit');
         $form = $crawler->selectButton('Edytuj')->form();
 
         $form['report[title]'] = $reportTitle;

@@ -1,6 +1,7 @@
 <?php
+
 /**
- * User repository
+ * User repository.
  */
 
 namespace App\Repository;
@@ -13,6 +14,8 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 
 /**
+ * User repository find.
+ *
  * @extends ServiceEntityRepository<User>
  *
  * @implements PasswordUpgraderInterface<User>
@@ -50,7 +53,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     }
 
     /**
-     * Save user
+     * Save user.
      *
      * @param User $user User
      */

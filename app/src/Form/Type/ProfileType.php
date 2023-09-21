@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Profile type.
  */
@@ -13,7 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Class ProfileType
+ * Class ProfileType.
  */
 class ProfileType extends AbstractType
 {
@@ -25,7 +26,7 @@ class ProfileType extends AbstractType
     /**
      * Constructor.
      *
-     * @param TranslatorInterface $translator
+     * @param TranslatorInterface $translator translator
      */
     public function __construct(TranslatorInterface $translator)
     {
@@ -52,7 +53,7 @@ class ProfileType extends AbstractType
     }
 
     /**
-     * Configure options
+     * Configure options.
      *
      * @param OptionsResolver $resolver Options resolver
      */
@@ -64,7 +65,7 @@ class ProfileType extends AbstractType
     }
 
     /**
-     * Get block prefix
+     * Get block prefix.
      *
      * @return string Block prefix
      */

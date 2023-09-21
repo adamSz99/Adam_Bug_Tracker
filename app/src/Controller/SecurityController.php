@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Security controller
+ * Security controller.
  */
 
 namespace App\Controller;
@@ -18,26 +19,22 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * Security controller
+ * Class Security controller.
  */
 class SecurityController extends AbstractController
 {
     /**
-     * Translator
-     *
-     * @var TranslatorInterface
+     * Translator.
      */
     private TranslatorInterface $translator;
 
     /**
-     * User service
-     *
-     * @var UserService
+     * User service.
      */
     private UserService $userService;
 
     /**
-     * Construct new controller
+     * Construct new controller.
      *
      * @param TranslatorInterface $translator  Translator
      * @param UserService         $userService User service
@@ -49,7 +46,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * Login action
+     * Login action.
      *
      * @param AuthenticationUtils $authenticationUtils Authentication utils
      *
@@ -69,7 +66,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * Upgrade password action
+     * Upgrade password action.
      *
      * @param Request                     $request        Request
      * @param User                        $user           User
@@ -141,7 +138,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * Logout action
+     * Logout action.
      */
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): void

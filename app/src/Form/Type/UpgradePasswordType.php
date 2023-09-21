@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Upgrade password type
+ * Upgrade password type.
  */
 
 namespace App\Form\Type;
@@ -16,7 +17,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 /**
- * Class UpgradePasswordType
+ * Class UpgradePasswordType.
  */
 class UpgradePasswordType extends AbstractType
 {
@@ -26,7 +27,7 @@ class UpgradePasswordType extends AbstractType
     private TranslatorInterface $translator;
 
     /**
-     * Construct new type
+     * Construct new type.
      *
      * @param TranslatorInterface $translator Translator
      */
